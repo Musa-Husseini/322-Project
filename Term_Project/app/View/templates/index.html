@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+    <h1>Welcome to WSU Research Openings!</h1>
+
+    {%if current_user.userType == "student"%}
+    <!-- Recommended Search -->
+        {% if posts %}
+
+            <form action="" method="post">
+                {{ form.hidden_tag() }}
+                <div class="formselect">
+
+                    Recommended Search: {{form.boolField}}
+
+                </div>
+                {{ form.refresh(class="button") }}
+
+            </form>
+
+        {% endif %}
+
+    {% endif %}
+
+
+
+    <!-- Displays Posts -->
+    <div class = "postlist">
+        {% for post in posts %}
+            <div class = "postboy me-1">
+                {% include '_post.html' %}
+            </div> 
+        {% endfor %}
+    </div>
+    
+ </div>    
+{% endblock %}

@@ -1,0 +1,21 @@
+<table class = "table table-hover">
+    
+    
+
+    {% if app.jobPost == None %}
+        <tr valign = "center">
+            <td width = "5%"> {{app.whoApplied.firstname}} </td>
+            <td width = "65%"> {{app.whoApplied.lastname}} </td>
+            <td width = "30%"> Job Posting No Longer Available </td>
+        </tr>
+    {% else %}
+        <tr valign = "center">
+            <td width = "5%"> {{app.whoApplied.firstname}} </td>
+            <td width = "25%"> {{app.whoApplied.lastname}} </td>
+            <td width = "10%"> {{app.jobPost.facultyFirst}} {{app.jobPost.facultyLast}}</td>
+            <td width = "30%"> {{app.jobPost.title}} </td>
+            <td width = "30%"> {{app.appStatus }}</td>
+        </tr>    
+    {% endif %}
+
+</table>
